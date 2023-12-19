@@ -1,0 +1,13 @@
+name: Say Hi! :wave:
+description: Say hi and save time
+author: Heidi
+
+inputs: 
+  who-to-greet:
+    description: "who should we say hi to"
+    required: true
+    default: 'world'
+outputs:
+  time:
+    description: "the time we were friendly"
+  
