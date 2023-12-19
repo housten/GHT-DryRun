@@ -16,6 +16,6 @@ jobs:
       - uses: actions/checkout@v4.1.1 
       - run: |
           echo "triggered by  ${{ github.event_name }}"
-          echo " my branch is  ${{ github.ref }}
+          echo " my branch is  ${{ github.ref }}"
           tree
           
