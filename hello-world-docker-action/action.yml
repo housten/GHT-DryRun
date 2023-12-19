@@ -10,4 +10,10 @@ inputs:
 outputs:
   time:
     description: "the time we were friendly"
-  
+
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}  
