@@ -18,6 +18,7 @@ jobs:
       hi-time: ${{ steps.hitime.outputs.time }} 
     steps:
       - run: echo "Hi ${{ inputs.who-to-greet }}"
+      - run: echo "Hi ${{ inputs.who-to-greet }} :heart:" >> $GITHUB_STEP_SUMMARY        
       - name: Hi time
         id: hitime
         run: echo "time=$(date)" >> $GITHUB_OUTPUT
