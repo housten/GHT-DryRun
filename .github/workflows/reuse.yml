@@ -1,0 +1,19 @@
+name: Reuse other workflow
+
+on: 
+  workflow_dispatch:
+    inputs:
+      greetee:
+        description: 'Who do we target for 🗨️'
+        type: string
+        required: true  
+jobs:
+  use-reusable:
+   uses: ./.github/workflows/reusable.yml
+   with:
+     who-to-greet: ${{ inputs.greetee }}
+  use-output:
+    runs-on: ubuntu-latest
+    needs: [use-reusable]
+    steps:
+      - run: echo "Time was ${{ needs.use-reusable.outputs.hi-time }}"
