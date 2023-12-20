@@ -17,3 +17,4 @@ jobs:
     needs: [use-reusable]
     steps:
       - run: echo "Time was ${{ needs.use-reusable.outputs.hi-time }}"
+      - run: echo "Time ${{ needs.use-reusable.outputs.hi-time }}" >> $GITHUB_STEP_SUMMARY
